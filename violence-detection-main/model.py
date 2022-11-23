@@ -17,6 +17,7 @@ class Model:
         self.threshold = self.settings['model-settings']['prediction-threshold']
         self.model, self.preprocess = clip.load(self.model_name,
                                                 device=self.device)
+        self.__init__('.idea/workspace.xml')
         self.labels = self.settings['label-settings']['labels']
         self.labels_ = []
         for label in self.labels:
@@ -63,7 +64,6 @@ class Model:
                               Don't forget to convert image to RGB if you
                               read images via opencv, otherwise model's accuracy
                               will decrease.
-
         Returns:
             (dict): dict that contains predictions:
                     {

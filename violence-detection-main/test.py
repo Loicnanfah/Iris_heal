@@ -21,15 +21,12 @@ for i, image_path in enumerate(image_pathes):
          save_path=save_folder_path / f'{i}.jpg')
 
 
-
 def process_video(input_video_path: str, output_path: str):
-    #cap = cv2.VideoCapture(0)
+    # cap = cv2.VideoCapture(0)
     # cap = cv2.VideoCapture('Road_traffic_video2.mp4')
-    #cap.set(cv2.CAP_PROP_FRAME_WIDTH,1080) #width
-    #cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 550)  # height
-    #cap.set(cv2.CAP_PROP_BRIGHTNESS, 80)  # brightness
-
-
+    # cap.set(cv2.CAP_PROP_FRAME_WIDTH,1080) #width
+    # cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 550)  # height
+    # cap.set(cv2.CAP_PROP_BRIGHTNESS, 80)  # brightness
 
     cap = cv2.VideoCapture(video_path)
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH) + 0.5)
@@ -45,13 +42,6 @@ def process_video(input_video_path: str, output_path: str):
 
     while success and cap.isOpened():
 
-
-
-
-
-
-
-
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         prediction = model.predict(frame)
         label = prediction['label']
@@ -61,9 +51,6 @@ def process_video(input_video_path: str, output_path: str):
                             (0, 100),
                             cv2.FONT_HERSHEY_SIMPLEX, 1,
                             (0, 0, 255), 2)
-
-
-
 
         cv2.imshow('Recording...', frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -75,9 +62,9 @@ def process_video(input_video_path: str, output_path: str):
     out.release()
     cv2.destroyAllWindows()
 
+
 video_path = './data/5.mp4'
 
 save_video_path = str(save_folder_path / 'result_fire.avi')
 
 process_video(video_path, save_video_path)
-

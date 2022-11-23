@@ -1,0 +1,3 @@
+{
+    "files": ["pages/dash.qml","pages/dashboard.qml","main.py","pages/camera.qml","main.qml","pages/map.qml"]
+}
