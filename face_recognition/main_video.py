@@ -9,6 +9,7 @@ sfr.load_encoding_images("images/")
 cap = cv2.VideoCapture(0)
 
 
+
 while True:
     ret, frame = cap.read()
 
