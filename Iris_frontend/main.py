@@ -10,6 +10,7 @@ class Mainwindow(QObject):
        def __init__(self):
             QObject.__init__(self)
 
+
        #signal set Name
        setName = Signal(str)
        # Function
